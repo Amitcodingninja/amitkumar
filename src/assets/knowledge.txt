@@ -1,0 +1,82 @@
+For making responsive 
+
+className="grid gap-8 sm:max-xl:bg-blue-50 sm:max-xl:p-9 md:grid-cols-2 md:items-center md:text-left"
+
+In About 
+// I added `id="about"` to the `<section>` element to enable linking from the header. This allows the "About" link to scroll to this section when clicked.
+
+In Banner 
+
+
+
+/*
+Key Changes Explained:
+Responsive Padding (px-4 py-16 md:px-16 md:py-32):
+
+Added responsive padding for the main-container class to adjust the padding based on screen size. It uses smaller padding on mobile and increases for medium screens and larger devices.
+Text Section Width (w-full sm:w-2/3):
+
+On small screens, the text container takes up full width (w-full), and on larger screens (from sm breakpoint), it takes up 2/3 of the width (sm:w-2/3).
+Font Sizes:
+
+Adjusted the font size for different screen sizes using Tailwind's responsive classes like text-4xl sm:text-5xl for the main header and text-xl sm:text-3xl for subheadings, making text larger on larger screens.
+Paragraph Text Size (text-sm sm:text-base):
+
+The paragraph text is smaller (text-sm) on mobile and increases to a larger size (sm:text-base) on larger screens for better readability.
+Social Media Icons:
+
+flex justify-center sm:justify-start: Centers the icons on small screens and aligns them to the left on larger screens using sm:justify-start.
+px-4 py-4 w-14 h-14 sm:w-16 sm:h-16: Sets the icons' size to w-14 h-14 on mobile and increases to w-16 sm:h-16 on larger screens for better visibility.
+text-3xl sm:text-4xl: Ensures the icon size is smaller on mobile (text-3xl) and grows larger on bigger screens (sm:text-4xl).
+Image (w-48 sm:w-64 md:w-80):
+
+The image is set to w-48 for small screens, and as the screen size increases, it grows to sm:w-64 and md:w-80 for larger devices.
+These adjustments ensure that the Banner component is fully responsive and adapts to different screen sizes smoothly.
+
+*/
+
+In index.css for font 
+@import url('https://fonts.googleapis.com/css2?family=Roboto&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+
+body {
+  font-family: "Roboto", sans-serif;
+  font-weight: 400;
+  font-style: normal;
+}
+html {
+  scroll-behavior: smooth;
+}
+
+for hosting in vite.config.js 
+//npm run build
+import { defineConfig } from 'vite'
+import react from '@vitejs/plugin-react'
+
+// https://vite.dev/config/
+export default defineConfig({
+  plugins: [react()],
+  base:'/amitkumar/',
+  build:{
+    outDir:"./docs",
+  }
+})
+
+
+in tailwind.config.js For CDN 
+/** @type {import('tailwindcss').Config} */
+export default {
+  content: ["./index.html",
+    "./src/**/*.{js,ts,jsx,tsx}"],
+  theme: {
+    extend: {},
+  },
+  plugins: [],
+}
+
+for Dist Folder 
+//npm run build
