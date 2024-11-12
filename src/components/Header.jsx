@@ -14,7 +14,7 @@ const Header = () => {
 
   const [action, setActionButton] = useState({
     title: "CV",
-    link: "/assets/Amit_Kumar_CV.pdf",
+    link: "https://drive.google.com/file/d/1lEHNc0YlKiKK6_EX-nJ5Q3g4gLeQQm-F/view?usp=drive_link",
   });
 
   return (
