@@ -46,7 +46,7 @@ const Certifications = () => {
   };
 
   return (
-    <>
+    <section id="certificates"> {/* Add this id */}
       <h1 className="text-center pb-4 text-5xl underline font-bold">
         Certification
       </h1>
@@ -100,7 +100,7 @@ const Certifications = () => {
           </div>
         </div>
       )}
-    </>
+    </section>
   );
 };
 
